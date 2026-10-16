@@ -1,0 +1,27 @@
+'''
+MONTALLANA, Trixette Rain A.
+20420 - ITELECPYTH
+a program that would accept a non-negative integer value not greater than 20, compute the factorial of the given value using an iterative approach
+example:
+input(0..20): 5
+the factorial of 5 is 120
+'''
+
+from os import system
+system("cls")
+
+try:
+    n = int(input("input(1..20): "))
+    if n > 0 and n <= 20:
+        original_n = n  # Store the original input
+        factorial = 1
+
+        while n > 0:
+            factorial = factorial * n
+            n = n - 1
+
+        print(f"The factorial of {original_n} is {factorial}")
+    else:
+        print("Accept only numbers from 1 to 20")
+except:
+    print("Invalid Input")
