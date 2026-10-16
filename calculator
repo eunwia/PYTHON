@@ -1,0 +1,87 @@
+'''
+a program that would display the menu shown below
+---- Main Menu ----
+1. Multiply
+2. Divide
+3. Add
+4. Subtract
+0. Quit/End
+-------------------
+Enter option(0..5):
+provide a operational module(function) for each option that can be selected by the menu shown, use module names according to the menu provided
+'''
+from os import system
+
+def displaymenu()->None:
+    system("cls")
+    print(" Main Menu ".center(19,'-')) #print(" Main Menu ".center(19,'-'))
+    print("1. Multiply")
+    print("2. Divide")
+    print("3. Add")
+    print("4. Subtract")
+    print("0. Quit/End")
+    print("-"*19)
+    
+def inputmodule()->None:
+    a:int = int(input("Enter first  value:"))
+    b:int = int(input("Enter second value:"))
+    return a,b
+        
+def multiply()->None:
+    system("cls")
+    print(" Multiply ".center(19,'-'))
+    try:
+        a,b = inputmodule()
+        print(f"the product of {a} and {b} is {(a*b)}")
+    except:
+        print("invalid input")
+        
+def divide()->None:
+    system("cls")
+    print(" Divide ".center(19,'-'))
+    try:
+        a,b = inputmodule()
+        print(f"the quotient of {a} and {b} is {(a/b)}")    
+    except:
+        print("invalid input")
+        
+def add()->None:
+    system("cls")
+    print(" Add ".center(19,'-'))
+    try:
+        a,b = inputmodule()
+        print(f"the sum of {a} and {b} is {(a+b)}")
+    except:
+        print("invalid input")
+        
+def subtract()->None:
+    system("cls")
+    print(" subtract ".center(19,'-'))
+    try:
+        a,b = inputmodule()
+        print(f"the difference of {a} and {b} is {(a-b)}")
+    except:
+        print("invalid input")
+        
+def quit()->None:
+    print("program ended...")
+    
+def main()->None:
+    option:str = ""
+    while option != "0":
+        displaymenu()
+        option = input("Enter Option(0..5):")
+        match option:
+            case "1": multiply()
+            case "2": divide()
+            case "3": add()
+            case "4": subtract()
+            case "0": quit()
+            case   _: print("Invalid Option")
+        input("press any key to continue...")
+        
+if __name__=="__main__":
+    main()
+
+
+
