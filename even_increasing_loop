@@ -1,0 +1,18 @@
+""""
+even increasing loop 
+ex. 2,4,6,8,10
+"""
+
+from os import system
+
+system("cls")
+
+try:
+	n=int(input("Enter n(1..20): "))
+	if n>0 and n<=20:
+		for i in range (2,n+1,2):
+			print(i, end=" ")
+	else:
+		print("accept only 1 to 20")
+except:
+	print("Invalid input")
