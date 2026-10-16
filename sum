@@ -1,0 +1,15 @@
+"""
+	A program that would accept two(2) integers, compute the sum and display
+"""
+
+from os import system 
+system("cls")
+
+try: 
+    value1:int = int(input("Enter first value :"))
+    value2:int = int(input("Enter second value :"))
+    result:int = value1 + value2
+    print(f"The sum of {value1} and {value2} is {result}")
+    
+except:
+    print ("Invalid Input")
