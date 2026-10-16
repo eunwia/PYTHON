@@ -1,0 +1,44 @@
+#list built-in structure
+mylist:list = [1,2,3,4,5,"trixette",1.25,['a','b','c']] #initialize
+
+newlist:list = [6,1,90,4,8,3,7]
+def removeitem(index:int)->any:
+    return mylist.pop(index)
+    #return mylist.remove(item)
+    
+def insertitem(index:int,newitem:any)->None:
+    mylist.insert(index,newitem)
+
+
+def main()->None:
+    print(mylist)
+    mylist[1]=100
+    print(mylist)
+    mylist.append(99)
+    print(mylist)
+    index:int = mylist.index("trixette")
+    print(f"removed item :{removeitem(index)}")
+    print(mylist)
+    index = mylist.index(1.25)
+    insertitem(index,"xxx")
+    print(mylist)
+    mylist.append(100)
+    mylist.append(100)
+    mylist.append(100)
+    print(mylist)
+    print(mylist.count(100))
+    print('montallana' in mylist)
+    for item in mylist:
+        print(item,end=" ")
+    print()  
+    [print(item,end=" ") for item in mylist]
+    print()
+    #using indexed display
+    for index in range(0,len(mylist)):
+        print(mylist[index])
+    print(newlist)
+    newlist.sort(reverse=True)
+    print(newlist)
+    
+if __name__=="__main__":
+    main()
