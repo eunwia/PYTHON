@@ -1,0 +1,19 @@
+"""
+	A program that would accept an integer that would display "ZERO" if the value is 0, "EVEN" is the value is even, else "ODD"
+"""
+
+from os import system
+system("cls")
+
+try:
+    n = int(input("Enter n:"))
+    if n==0:
+        print("ZERO")
+    else:
+        c = n % 2 
+        if c > 0:
+            print("ODD")
+        else:
+            print("EVEN")
+except:
+    print(" Invalid input")
