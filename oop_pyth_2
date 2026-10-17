@@ -1,0 +1,57 @@
+'''
+	Student class ->inherit from Person class
+'''
+from oop1 import Person
+from os import system
+
+class Student(Person):
+    def __init__(self,idno:str,lastname:str,firstname:str,course:str,level:str)->None:
+        super().__init__(lastname,firstname)
+        self.idno = idno
+        self.course = course
+        self.level = level
+
+    def setIdno(self,idno:str)->None:               self.idno = idno
+    def setCourse(self,course:str)->None:           self.course = course
+    def setLevel(self,level:str)->None:             self.level = level
+    
+    def getIdno(self)->str:                         return self.idno
+    def getCourse(self)->str:                       return self.course
+    def getLevel(self)->str:                        return self.level
+    
+    def __str__(self)->str:
+        return self.idno+" "+super().__str__()+" "+self.course+" "+self.level
+    
+    def __eq__(self,other)->bool:
+        ok:bool = False
+        if isinstance(other,Student):
+            if self.idno == other.idno:
+                ok = True
+        return ok
+        
+def main()->None:
+    system('cls')
+    s = Student('0001','alpha','bravo','bscpe','4')
+    t = Student('0002','charlie','delta','bscs','3')
+    u = Student('0003','echo','foxtrot','bsit','2')
+    v = Student('0004','golf','hotel','bscream','1')
+    w = Student('0005','india','juliet','bshm','4')
+    
+    print(s)
+    print(t)
+    print(u)
+    print(v)
+    print(w)
+    
+    t.setIdno('0001')
+    print(s.__eq__(t))
+    
+    
+    
+if __name__=="__main__":
+    main()
+
+
+
+    
+    
