@@ -1,0 +1,39 @@
+'''
+	Person class
+'''
+from os import system
+class Person:
+    
+    def __init__(self,lastname:str,firstname:str)->None:
+        self.lastname=lastname
+        self.firstname=firstname
+        
+    #setters - modifiers
+    def setLastname(self,lastname:str)->None:       self.lastname=lastname
+    def setFirstname(self,firstname:str)->None:     self.firstname=firstname
+    #getter - accessor
+    def getLastname(self)->str:                     return self.firstname
+    def getFirstname(self)->str:                    return self.firstname
+    #toString()
+    def __str__(self)->str:
+        return self.lastname +" "+ self.firstname
+    #equals(other object)
+    def __eq__(self,other)->bool:
+        ok:bool = False
+        if isinstance(other,Person): #isinstance is module to check object origin
+            if self.lastname == other.lastname and self.firstname == other.firstname:
+                ok = True
+        return ok
+    
+def main()->None: 
+    system('cls')
+    p = Person('alpha','bravo')
+    print(p)
+    q = Person('alpha','bravo')
+    print(q)
+    print(p.__eq__(q))
+    
+    
+    
+if __name__=="__main__":
+    main()
